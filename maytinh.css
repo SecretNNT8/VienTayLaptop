@@ -1,0 +1,1765 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 15vh;
+    /* tự động trừ header fixed */
+}
+
+p {
+    margin-bottom: 0;
+}
+
+body {
+    background-color: #ece8e1;
+    z-index: -2;
+    scroll-behavior: smooth;
+}
+
+/* Header CSS */
+.header {
+    width: 100vw;
+    height: 15vh;
+    background-color: #9ccdd8;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header-left {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px 10px 65px;
+    gap: 5%
+}
+
+.lgn {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-left p {
+    font-style: italic;
+    font-size: 180%;
+    font-family: monospace;
+    font-weight: 1000;
+    margin-top: 4%;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #1150c3 0%, #24abe3 60%, #24abe3 100%);
+}
+
+.header-middle {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.header-middle p {
+    color: #292929;
+    font-style: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: 650;
+    letter-spacing: 0.5px;
+}
+
+.header-middle-wrapper a {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+}
+
+.header-middle-wrapper a:after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 0px;
+    background: #f9f9f9;
+    bottom: -8px;
+    left: 0;
+    transition: 0.75s ease;
+}
+
+.header-middle-wrapper a:hover::after {
+    width: 40%;
+    transform: translateX(150%);
+    background: #24abe3;
+}
+
+.header-middle-wrapper {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    margin-left: auto;
+    margin-right: 4%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.header-middle svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-right .searching {
+    fill: aliceblue;
+    background-color: rgba(105, 105, 105, 0.477);
+    padding: 6px 8px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.header-right .language {
+    cursor: pointer;
+}
+
+.searching svg {
+    height: 20px;
+    width: 20px;
+}
+
+/* Content */
+.content {
+    height: 250vh;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-top: 15vh;
+    overflow: hidden;
+    background-color: #0b1220;
+}
+
+.maytinh {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    font-family: monospace;
+    letter-spacing: 1vh;
+    color: #00c2ff;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    /* khoảng cách giữa 2 nút */
+}
+
+.previous {
+    position: absolute;
+    right: 20%;
+    top: 26%;
+    background: #152238;
+    fill: Red;
+    color: red;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 100;
+}
+
+.next {
+    position: absolute;
+    right: 15%;
+    top: 26%;
+    background: #152238;
+    color: red;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 100;
+}
+
+.contentfake {
+    overflow-x: hidden;
+    height: 85vh;
+    width: 90%;
+    padding-top: 5%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.lt {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+}
+
+.ltf {
+    flex-shrink: 0;
+    border-radius: 15px 15px 15px 15px;
+    border: 2px solid white;
+    overflow: hidden;
+    line-height: 0;
+    position: relative;
+    width: 20vw;
+    height: 50%;
+    margin-right: 5%;
+    background: linear-gradient(35deg, white, pink 40%, #87c9d8 100%);
+}
+
+.ltf a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.laptop {
+    height: 100%;
+    width: 100%;
+}
+
+.laptop-pic {
+    width: 100%;
+    height: 80%;
+}
+
+.badge {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    background: linear-gradient(270deg, #1150c3, #24abe3, #00c2ff);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
+
+    color: #fff;
+    padding: 2% 4%;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(17, 244, 206, 0.416);
+}
+
+/* Hiệu ứng chạy màu */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.infor {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    padding: 4%;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0.214);
+    backdrop-filter: blur(8px);
+}
+
+.name {
+    height: 60%;
+    width: 70%;
+    font-size: 150%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: flex-end;
+    line-height: 0.8;
+}
+
+.prandspr {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: baseline; */
+    gap: 3px;
+    line-height: 0.8;
+}
+
+.price {
+    font-size: 105%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.saleprice {
+    text-align: right;
+    text-decoration: line-through;
+    font-size: 80%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.daysac {
+    height: 75vh;
+    width: 100%;
+    background: linear-gradient(45deg, black, #345389);
+    color: aliceblue;
+}
+
+.daysacDell {
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
+.sacDell-pic {
+    height: 100%;
+    width: 30%;
+    object-fit: cover;
+}
+
+.sacDell-pic img {
+    height: 100%;
+    width: 100%;
+    transform: scaleX(-1);
+}
+
+.inforsacDell {
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+}
+
+.inforsacDell div:first-child {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inforsacDell div:first-child h2 {
+    font-size: 30px;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.inforsacDell div:first-child p {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00c2ff;
+}
+
+.inforsacDell div:last-child {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.inforsacDell div:last-child p {
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.daysacHP {
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
+.sacHP-pic {
+    height: 100%;
+    width: 30%;
+    object-fit: cover;
+}
+
+.sacHP-pic img {
+    height: 100%;
+    width: 100%;
+}
+
+.inforsacHP {
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+}
+
+.inforsacHP div:first-child {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inforsacHP div:first-child h2 {
+    font-size: 30px;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.inforsacHP div:first-child p {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00c2ff
+}
+
+.inforsacHP div:last-child {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.inforsacHP div:last-child p {
+    font-size: 18px;
+}
+
+.nangcapmay {
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    background-color: blue;
+}
+
+.infornangcap {
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.infornangcap h1 {
+    width: 30%;
+    height: 10%;
+    margin: 0 auto;
+    margin-top: 2%;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-shadow: 0 0 20px rgba(122, 241, 254, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.infornangcap h1::after {
+    content: attr(data-text);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    inset: 0;
+    background:
+        linear-gradient(90deg,
+            transparent 0%,
+            rgba(82, 238, 255, 0.9) 50%,
+            transparent 100%);
+    /* background-size: 200% 100%; */
+    background-position: center;
+    /* bắt đầu ở giữa */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: splitSweep 1.95s infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes splitSweep {
+    0% {
+        background-size: 0% 100%;
+        /* vệt sáng hẹp ở giữa */
+        opacity: 1;
+    }
+
+    50% {
+        background-size: 200% 100%;
+        /* bung ra 2 phía */
+        opacity: 1;
+    }
+
+    100% {
+        background-size: 300% 100%;
+        /* ra khỏi chữ */
+        opacity: 0;
+    }
+}
+
+.nangcap {
+    height: 70%;
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+}
+
+.up {
+    height: 100%;
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.214);
+    backdrop-filter: blur(8px);
+    transition: 1s ease-in-out;
+    padding: 10%;
+    border: 2px solid #252632;
+    box-shadow: 0 4px 10px #0000005d;
+}
+
+.up:hover {
+    border-radius: 5%;
+    background-color: rgba(132, 189, 251, 0.214);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 10px #0000005d;
+}
+
+.up-pic {
+    height: 50%;
+    width: 100%;
+    margin-top: 5%;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.up-pic img {
+    height: 100%;
+    width: 100%;
+}
+
+.up h3 {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
+    color: #24abe3;
+    transition: 1s ease-in-out;
+    text-align: center;
+}
+
+.up:hover h3 {
+    color: #111;
+}
+
+.up:hover div:last-child div p:last-child {
+    color: #111;
+}
+
+/* SSD */
+.upssd {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    gap: 10%;
+}
+
+.upssd div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5%;
+    transition: 1s ease-in-out;
+    border-top: 1px solid #24abe3;
+}
+
+.upssd div p:first-child {
+    font-size: 20px;
+    color: yellow
+}
+
+.upssd div p:last-child {
+    font-size: 16px;
+    color: #00c2ff;
+    transition: 1s ease-in-out;
+}
+
+.up:hover div:last-child div {
+    border-top: 1px solid transparent;
+    padding: 5px;
+}
+
+/* RAM */
+.upram {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    gap: 10%;
+}
+
+.upram div {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5%;
+    transition: 1s ease-in-out;
+    border-top: 1px solid #24abe3;
+}
+
+.upram div p:first-child {
+    font-size: 20px;
+    color: yellow
+}
+
+.upram div p:last-child {
+    font-size: 16px;
+    color: #00c2ff;
+    transition: 1s ease-in-out;
+}
+
+.ram:hover .upram div {
+    border-top: 1px solid transparent;
+    padding: 5px;
+}
+
+/* SCREEN */
+.upscreen {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    gap: 10%;
+}
+
+.upscreen div {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5%;
+    transition: 1s ease-in-out;
+    border-top: 1px solid #24abe3;
+}
+
+.upscreen div p:first-child {
+    font-size: 20px;
+    color: yellow
+}
+
+.upscreen div p:last-child {
+    font-size: 16px;
+    color: #00c2ff;
+    transition: 1s ease-in-out;
+}
+
+.screen:hover .upscreen div {
+    border-top: 1px solid transparent;
+    padding: 5px;
+}
+
+/* Video */
+.hero--video {
+    position: relative;
+    min-height: 70vh;
+    overflow: hidden;
+}
+
+.hero__video,
+.hero__fallback {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* giống background-size: cover */
+}
+
+.hero__fallback {
+    z-index: 0;
+}
+
+.hero__video {
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .25);
+    z-index: 0;
+}
+
+/* Footer */
+.footer {
+    height: 45vh;
+    background-color: #152238;
+    z-index: -2;
+}
+
+#logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0;
+}
+
+#logo p {
+    font-style: italic;
+    font-size: 180%;
+    font-family: monospace;
+    font-weight: 1000;
+    margin-top: 4%;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #1150c3 0%, #24abe3 60%, #24abe3 100%);
+}
+
+.lgname {
+    margin-top: 1%;
+}
+
+.banquyen {
+    margin: 0 auto;
+    background-color: #152238;
+}
+
+.noidungbanquyen p {
+    color: #737373;
+    font-size: 12px;
+}
+
+.noidungbanquyen {
+    margin: 0px auto;
+    width: 40%;
+    text-align: center;
+    padding-top: 12px;
+}
+
+/* Hamburger icon (chỉ hiện trên mobile) */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* ===============================
+   Responsive Layout
+   =============================== */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+
+    .header {
+        flex-direction: row;
+        height: 12vh;
+    }
+
+    .header-left {
+        width: auto;
+        padding-left: 30px;
+        gap: 10px;
+    }
+
+    .header-left img {
+        width: 60px;
+        height: auto;
+    }
+
+    .lgn p {
+        font-size: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header-middle {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 15vh;
+        /* ngay dưới header */
+        left: -100%;
+        /* ẩn ra ngoài màn hình */
+        width: 70%;
+        height: 100vh;
+        background-color: #fff;
+        padding: 20px;
+        transition: 0.4s ease;
+        z-index: 999;
+    }
+
+    .header-middle.show {
+        left: 0;
+        /* trượt vào */
+    }
+
+    .header-middle-wrapper {
+        justify-content: flex-start;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .previous,
+    .next {
+        display: none;
+    }
+
+    .content {
+        height: fit-content;
+        padding-top: 12vh;
+    }
+
+    .previous,
+    .next {
+        display: none;
+    }
+
+    .contentfake {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 200vh;
+        margin-top: 100px;
+        gap: 24px;
+    }
+
+    .maytinh {
+        top: 16%;
+    }
+
+    .lt {
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .ltf {
+        flex-shrink: 1;
+        width: 100%;
+        height: 10000px;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .saleprice {
+        font-size: 10px;
+    }
+
+    .daysac {
+        height: 50vh;
+    }
+
+    .sacDell-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .sacHP-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .inforsacDell {
+        width: 50%;
+    }
+
+    .inforsacHP {
+        width: 50%;
+    }
+
+    .inforsacDell div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+    }
+
+    .inforsacHP div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+        padding-top: 0;
+    }
+
+    .inforsacDell div:last-child p {
+        font-size: 10px;
+    }
+
+    .inforsacHP div:last-child p {
+        font-size: 12px;
+    }
+
+    .nangcapmay {
+        height: 115vh
+    }
+
+    .infornangcap {
+        gap: 0;
+    }
+
+    .infornangcap h1 {
+        height: 5%;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .infornangcap h1::after {
+        padding-top: 20px;
+    }
+
+    .nangcap {
+        display: block;
+        gap: 20px;
+        width: 50%;
+        margin: 0 auto
+    }
+
+    .up {
+        width: 100%;
+        height: 30vh;
+        margin-bottom: 50px;
+    }
+
+    .footer {
+        height: 20vh;
+    }
+
+    .noidungbanquyen {
+        width: 90%;
+    }
+}
+
+/* Mobile (<= 576px) */
+@media (max-width: 576px) {
+    .header-left {
+        width: 70%;
+        padding: 0 0 10px 20px;
+    }
+
+    .header-left img {
+        width: 60px;
+    }
+
+    .lgn p {
+        font-size: 1rem;
+    }
+
+    .header-middle p {
+        font-size: 0.9rem;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .content {
+        height: fit-content;
+        padding-top: 12vh;
+    }
+
+    .previous,
+    .next {
+        display: none;
+    }
+
+    .contentfake {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 200vh;
+        margin-top: 100px;
+        gap: 24px;
+    }
+
+    .maytinh {
+        top: 16%;
+    }
+
+    .lt {
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .ltf {
+        flex-shrink: 1;
+        width: 100%;
+        height: 10000px;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .name {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 10px;
+    }
+
+    .saleprice {
+        font-size: 8px;
+    }
+
+    .daysac {
+        height: 50vh;
+    }
+
+    .sacDell-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .sacHP-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .inforsacDell {
+        width: 50%;
+    }
+
+    .inforsacHP {
+        width: 50%;
+    }
+
+    .inforsacDell div:first-child {
+        height: 5%;
+        margin-top: 25px;
+    }
+
+    .inforsacHP div:first-child {
+        height: 5%;
+        margin-top: 25px;
+    }
+
+    .inforsacDell div:first-child h2 {
+        font-size: 13px;
+        height: 20%;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .inforsacHP div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .inforsacDell div:first-child p {
+        font-size: 8px;
+    }
+
+    .inforsacHP div:first-child p {
+        font-size: 8px;
+    }
+
+    .inforsacDell div:last-child p {
+        font-size: 10px;
+        width: 80%;
+        padding-top: 20px
+    }
+
+    .inforsacHP div:last-child p {
+        font-size: 10px;
+        width: 80%;
+        padding-top: 30px
+    }
+
+    .nangcapmay {
+        height: 115vh
+    }
+
+    .infornangcap {
+        gap: 0;
+    }
+
+    .infornangcap h1 {
+        height: 60px;
+        width: 50%;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .infornangcap h1::after {
+        padding-top: 20px;
+    }
+
+    .nangcap {
+        display: block;
+        gap: 20px;
+        width: 50%;
+        margin: 0 auto
+    }
+
+    .up {
+        width: 100%;
+        height: 30vh;
+        margin-bottom: 25px;
+    }
+
+    .up h3 {
+        font-size: 12px;
+    }
+
+    .upssd div {
+        gap: 10px;
+    }
+
+    .upram div {
+        gap: 10px;
+    }
+
+    .upscreen div {
+        gap: 10px;
+    }
+
+    .up div:last-child div p:first-child {
+        font-size: 8px;
+    }
+
+    .up div:last-child div p:last-child {
+        font-size: 8px;
+    }
+
+    .up:hover div:last-child div {
+        border-top: 1px solid transparent;
+        /* padding: 1px; */
+    }
+
+    .footer {
+        height: 25vh
+    }
+
+    #logo img {
+        width: 50px;
+        height: auto;
+    }
+
+    #logo p {
+        font-size: 1.2rem;
+    }
+
+    .noidungbanquyen p {
+        font-size: 8px;
+    }
+}
+
+/* Tablet Mini */
+@media (min-width: 768px) and (max-width: 819px) {
+    .header {
+        height: 12vh;
+    }
+
+    .header-left {
+        width: 25%;
+        padding: 0 0px 10px 30px
+    }
+
+    .header-left img {
+        width: 80px;
+    }
+
+    .main {
+        padding-top: 12vh
+    }
+
+    .lgn p {
+        font-size: 100%;
+    }
+
+    .header-middle {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 60%;
+    }
+
+    .header-middle p {
+        font-size: 10px;
+    }
+
+    .header-middle-wrapper a:after {
+        bottom: -5px;
+    }
+
+    .content {
+        height: fit-content;
+        padding-top: 12vh;
+    }
+
+    .previous,
+    .next {
+        display: none;
+    }
+
+    .contentfake {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 200vh;
+        margin-top: 100px;
+        gap: 24px;
+    }
+
+    .maytinh {
+        top: 16%;
+    }
+
+    .lt {
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .ltf {
+        flex-shrink: 1;
+        width: 100%;
+        height: 10000px;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .daysac {
+        height: 50vh;
+    }
+
+    .sacDell-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .sacHP-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .inforsacDell {
+        width: 50%;
+    }
+
+    .inforsacHP {
+        width: 50%;
+    }
+
+    .inforsacDell div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+    }
+
+    .inforsacHP div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+        padding-top: 0;
+    }
+
+    .inforsacDell div:last-child p {
+        font-size: 12px;
+    }
+
+    .inforsacHP div:last-child p {
+        font-size: 12px;
+    }
+
+    .nangcapmay {
+        height: 150vh
+    }
+
+    .infornangcap {
+        gap: 0;
+    }
+
+    .infornangcap h1 {
+        height: 5%;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .infornangcap h1::after {
+        padding-top: 20px;
+    }
+
+    .nangcap {
+        display: block;
+        gap: 20px;
+        width: 50%;
+        margin: 0 auto
+    }
+
+    .up {
+        width: 100%;
+        height: 40vh;
+        margin-bottom: 50px;
+    }
+
+
+    .footer {
+        height: 25vh;
+    }
+
+    .noidungbanquyen {
+        width: 70%;
+    }
+}
+
+/* Tablet (820px - 1023px) */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .header {
+        height: 12vh;
+    }
+
+    .header-left {
+        padding: 0 0 10px 20px;
+        width: 25%;
+    }
+
+    .lgn p {
+        font-size: 120%;
+    }
+
+    .header-left img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-middle {
+        font-size: 10px;
+    }
+
+    .header-middle {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 60%;
+    }
+
+    .header-middle-wrapper a:after {
+        bottom: -5px;
+    }
+
+    .content {
+        height: fit-content;
+        padding-top: 12vh;
+    }
+
+    .previous,
+    .next {
+        display: none;
+    }
+
+    .contentfake {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 200vh;
+        margin-top: 100px;
+        gap: 24px;
+    }
+
+    .maytinh {
+        top: 16%;
+    }
+
+    .lt {
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .ltf {
+        flex-shrink: 1;
+        width: 100%;
+        height: 10000px;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .daysac {
+        height: 50vh;
+    }
+
+    .sacDell-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .sacHP-pic {
+        height: 100%;
+        width: 50%;
+    }
+
+    .inforsacDell {
+        width: 50%;
+    }
+
+    .inforsacHP {
+        width: 50%;
+    }
+
+    .inforsacDell div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+    }
+
+    .inforsacHP div:first-child h2 {
+        font-size: 15px;
+        height: 20%;
+        padding-top: 0;
+    }
+
+    .inforsacDell div:last-child p {
+        font-size: 12px;
+    }
+
+    .inforsacHP div:last-child p {
+        font-size: 12px;
+    }
+
+    .nangcapmay {
+        height: 115vh
+    }
+
+    .infornangcap {
+        gap: 0;
+    }
+
+    .infornangcap h1 {
+        height: 5%;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .infornangcap h1::after {
+        padding-top: 20px;
+    }
+
+    .nangcap {
+        display: block;
+        gap: 20px;
+        width: 50%;
+        margin: 0 auto
+    }
+
+    .up {
+        width: 100%;
+        height: 30vh;
+        margin-bottom: 50px;
+    }
+
+    .up h3 {
+        margin-top: 5%;
+    }
+
+    .footer {
+        height: 25vh;
+    }
+
+    .noidungbanquyen {
+        width: 70%;
+    }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .header {
+        height: 15vh;
+    }
+
+    .header-left {
+        padding: 0px 10px 10px 30px;
+        font-size: 13px;
+    }
+
+    .header-left p {
+        font-size: 150%;
+    }
+
+    .header-middle {
+        width: 55%;
+        font-size: 12px;
+    }
+
+    .contentfake {
+        width: 85%;
+    }
+
+    .ltf {
+        width: 25vw;
+    }
+
+    .name {
+        font-size: 17px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+    .saleprice {
+        font-size: 10px;
+    }
+
+    .inforsacDell div:first-child h2 {
+        font-size: 25px;
+    }
+
+    .inforsacHP div:first-child h2 {
+        font-size: 25px;
+    }
+
+    .inforsacDell div:first-child p {
+        font-size: 13px;
+    }
+
+    .inforsacHP div:first-child p {
+        font-size: 13px;
+    }
+
+    .inforsacDell div:last-child p {
+        font-size: 15px;
+    }
+
+    .inforsacHP div:last-child p {
+        font-size: 15px;
+    }
+
+    .up h3 {
+        font-size: 20px;
+    }
+
+    .up div:last-child div p:first-child {
+        font-size: 15px;
+        color: yellow;
+    }
+
+    .up div:last-child div p:last-child {
+        font-size: 13px;
+    }
+
+    .footer {
+        height: 45vh;
+    }
+
+    .noidungbanquyen {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) {
+    .header {
+        height: 12vh;
+    }
+
+    .header-left {
+        padding: 0px 0px 10px 40px;
+        font-size: 13px;
+    }
+
+    .header-middle {
+        width: 55%;
+        font-size: 12px;
+    }
+
+    .content {
+        height: 200vh;
+    }
+
+    .maytinh {
+        font-size: 60px;
+    }
+
+    .next {
+        font-size: 30px;
+        padding: 10px 20px;
+        right: 10%;
+    }
+
+    .previous {
+        font-size: 30px;
+        padding: 10px 20px;
+        right: 20%;
+    }
+
+    .ltf {
+        width: 50vw;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 23px;
+    }
+
+    .saleprice {
+        font-size: 16px;
+    }
+
+    .daysac {
+        height: 50vh;
+    }
+
+    .nangcapmay {
+        height: 50vh;
+    }
+
+    .hero--video {
+        min-height: 50vh;
+    }
+
+    .infornangcap h1 {
+        margin-top: 5%;
+        height: 15%;
+    }
+
+    .nangcap {
+        width: 90%;
+        height: 60%;
+    }
+
+    .header-middle p {
+        font-size: 95%;
+    }
+
+    .footer {
+        height: 25vh;
+    }
+}
+
+/* Desktop (≥ 1280px) */
+@media (min-width: 1280px) {
+    .header {
+        height: 15vh;
+    }
+
+    .header-left {
+        padding: 0px 0px 10px 40px;
+        font-size: 13px;
+    }
+
+    .header-middle {
+        width: 55%;
+    }
+
+    .header-middle p {
+        font-size: 95%;
+    }
+
+    .contentfake {
+        width: 85%;
+    }
+
+    .ltf {
+        width: 25vw;
+    }
+
+    .inforsacDell div:last-child p {
+        font-size: 18px;
+    }
+
+    .inforsacHP div:last-child p {
+        font-size: 18px;
+    }
+
+    .footer {
+        height: 45vh;
+    }
+
+    .noidungbanquyen {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .header {
+        height: 15vh;
+    }
+
+    .header-left {
+        padding: 0px 0px 10px 40px;
+        font-size: 13px;
+    }
+
+    .header-middle {
+        width: 55%;
+    }
+
+    .header-middle p {
+        font-size: 100%;
+    }
+
+    .footer {
+        height: 45vh;
+    }
+
+    .noidungbanquyen {
+        width: 40%;
+    }
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Đảm bảo ảnh không bị tràn */
+img,
+video {
+    max-width: 100%;
+}
+
+/* Với flex/grid, cho phép xuống hàng khi chật */
+.header-middle,
+.icon {
+    flex-wrap: wrap;
+}

@@ -1,0 +1,917 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 15vh;
+    /* tự động trừ header fixed */
+}
+
+p {
+    margin-bottom: 0;
+}
+
+body {
+    background-color: #ece8e1;
+    z-index: -2;
+    scroll-behavior: smooth;
+}
+
+/* Header CSS */
+.header {
+    width: 100vw;
+    height: 15vh;
+    background-color: #9ccdd8;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header-left {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px 10px 65px;
+    gap: 5%
+}
+
+.lgn {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-left p {
+    font-style: italic;
+    font-size: 180%;
+    font-family: monospace;
+    font-weight: 1000;
+    margin-top: 4%;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #1150c3 0%, #24abe3 60%, #24abe3 100%);
+}
+
+.header-middle {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.header-middle p {
+    color: #292929;
+    font-style: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: 650;
+    letter-spacing: 0.5px;
+}
+
+.header-middle-wrapper a {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+}
+
+.header-middle-wrapper a:after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 0px;
+    background: #f9f9f9;
+    bottom: -8px;
+    left: 0;
+    transition: 0.75s ease;
+}
+
+.header-middle-wrapper a:hover::after {
+    width: 40%;
+    transform: translateX(150%);
+    background: #24abe3;
+}
+
+.header-middle-wrapper {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    margin-left: auto;
+    margin-right: 4%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.header-middle svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-right .searching {
+    fill: aliceblue;
+    background-color: rgba(105, 105, 105, 0.477);
+    padding: 6px 8px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.header-right .language {
+    cursor: pointer;
+}
+
+.searching svg {
+    height: 20px;
+    width: 20px;
+}
+
+/* Carousel */
+.main {
+    padding-top: 15vh;
+}
+
+.carousel {
+    height: 85vh;
+    width: 100%;
+    z-index: 1;
+    object-position: center;
+    position: relative;
+    object-fit: contain;
+    background-color: #d5d2e0;
+}
+
+.d-block {
+    height: 100%;
+    margin: 0 auto;
+    color: #d5d2e0;
+    fill: #d5d2e0;
+}
+
+.carouselct p {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #ff4655;
+    transition: 1s ease-in-out;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #9ccdd8;
+    background-size: 100% 100%;
+}
+
+/* Content */
+.hotro {
+    display: flex;
+    background-color: white;
+    height: 80vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.support {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #0f0b3d 0%, #110d3f 30%, #0f0b3d 100%);
+}
+
+.support img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.uudai {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    padding: 100px 0 0 100px;
+    z-index: 10;
+}
+
+.before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1%;
+    background-image: linear-gradient(to right, #1150c3 0%, #24abe3 40%, #24abe3 60%, #ffffff 100%);
+}
+
+.after {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 1%;
+    background-image: linear-gradient(to right, #1150c3 0%, #24abe3 40%, #24abe3 60%, #ffffff 100%);
+}
+
+.uudai div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.uudai p {
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-family: monospace;
+    color: #00ffff;
+    margin-top: 20px;
+}
+
+.uudai a {
+    background-color: rgba(0, 0, 0, 0.573);
+}
+
+#contactus {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(/index-pic/contact-us.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.contact {
+    color: aliceblue;
+    font-size: 5vh;
+    letter-spacing: 1vh;
+    margin-top: 2%;
+}
+
+.sdt {
+    bottom: 12%;
+    left: 44%;
+    color: aliceblue;
+    font-size: 5vh;
+    margin-bottom: 2%;
+}
+
+.icon {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.icon a {
+    position: relative;
+    width: 5vh;
+    aspect-ratio: 1 / 1;
+    /* height: 16px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ic .facebook {
+    width: 100%;
+    height: 100%;
+    fill: #666;
+    fill-rule: evenodd;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.ic .youtube {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    fill: #666;
+    fill-rule: evenodd;
+    cursor: pointer;
+    border-radius: 30%;
+}
+
+.ic .instagram {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    fill: #666;
+    fill-rule: evenodd;
+    border-radius: 30%;
+}
+
+.ic:hover .facebook {
+    box-shadow: 0 0 5vh #24abe3;
+    fill: #24abe3;
+    transform: scaleX(1.5 1.5);
+    transition: 1s;
+}
+
+.ic:hover .youtube {
+    box-shadow: 0 0 5vh #24abe3;
+    fill: #24abe3;
+    transform: scaleX(1.5 1.5);
+    transition: 1s;
+}
+
+.ic:hover .instagram {
+    box-shadow: 0 0 5vh #24abe3;
+    fill: #24abe3;
+    transform: scaleX(1.5 1.5);
+    transition: 1s;
+}
+
+.ic {
+    background-color: black;
+    padding: 2.5vh;
+    border-radius: 30%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    transition: 1s;
+}
+
+/* Footer */
+.footer {
+    height: 45vh;
+    background-color: #152238;
+    z-index: -2;
+}
+
+#logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0;
+}
+
+#logo p {
+    font-style: italic;
+    font-size: 180%;
+    font-family: monospace;
+    font-weight: 1000;
+    margin-top: 4%;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #1150c3 0%, #24abe3 60%, #24abe3 100%);
+}
+
+.lgname {
+    margin-top: 1%;
+}
+
+.banquyen {
+    margin: 0 auto;
+    background-color: #152238;
+}
+
+.noidungbanquyen p {
+    color: #737373;
+    font-size: 12px;
+}
+
+.noidungbanquyen {
+    margin: 0px auto;
+    width: 40%;
+    text-align: center;
+    padding-top: 12px;
+}
+
+/* Hamburger icon (chỉ hiện trên mobile) */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* ===============================
+   Responsive Layout
+   =============================== */
+/* Mobile menu */
+@media (max-width: 767px) {
+    .header {
+        flex-direction: row;
+        height: 12vh;
+    }
+
+    .header-left {
+        width: auto;
+        padding-left: 30px;
+        gap: 10px;
+    }
+
+    .header-left img {
+        width: 60px;
+        height: auto;
+    }
+
+    .lgn p {
+        font-size: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header-middle {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 15vh;
+        /* ngay dưới header */
+        left: -100%;
+        /* ẩn ra ngoài màn hình */
+        width: 70%;
+        height: 100vh;
+        background-color: #fff;
+        padding: 20px;
+        transition: 0.4s ease;
+        z-index: 999;
+    }
+
+    .header-middle.show {
+        left: 0;
+        /* trượt vào */
+    }
+
+    .header-middle-wrapper {
+        justify-content: flex-start;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .main {
+        padding-top: 80px;
+    }
+
+    .carousel {
+        height: 50vh;
+    }
+
+    .hotro {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .uudai {
+        width: 60%;
+        padding: 35px;
+        gap: 20px;
+    }
+
+    .uudai p {
+        font-size: 6px;
+        letter-spacing: 1px;
+        margin-top: 10px
+    }
+
+    .support img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    #contactus {
+        height: 20vh;
+    }
+
+    .contact {
+        font-size: 15px;
+        text-align: center;
+        padding: 10px
+    }
+
+    .icon {
+        flex-wrap: wrap;
+        gap: 20px;
+        height: auto;
+        padding: 20px 0 20px;
+    }
+
+    .icon a {
+        width: 20px;
+    }
+
+    .ic {
+        padding: 10px;
+    }
+
+    .sdt {
+        font-size: 12px;
+    }
+
+    .footer {
+        height: 20vh;
+    }
+
+    .noidungbanquyen {
+        width: 90%;
+    }
+}
+
+/* Mobile (<= 576px) */
+@media (max-width: 576px) {
+    .header-left {
+        width: 70%;
+        padding: 0 0 10px 20px;
+    }
+
+    .header-left img {
+        width: 60px;
+    }
+
+    .lgn p {
+        font-size: 1rem;
+    }
+
+    .header-middle p {
+        font-size: 0.9rem;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .footer {
+        height: 25vh
+    }
+
+    #logo img {
+        width: 50px;
+        height: auto;
+    }
+
+    #logo p {
+        font-size: 1.2rem;
+    }
+
+    .noidungbanquyen p {
+        font-size: 8px;
+    }
+}
+
+
+
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        height: 12vh;
+    }
+
+    .header-left {
+        width: 25%;
+        padding: 0 0px 10px 30px
+    }
+
+    .header-left img {
+        width: 80px;
+    }
+
+    .main {
+        padding-top: 12vh
+    }
+
+    .lgn p {
+        font-size: 100%;
+    }
+
+    .header-middle {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 60%;
+    }
+
+    .header-middle p {
+        font-size: 10px;
+    }
+
+    .header-middle-wrapper a:after {
+        bottom: -5px;
+    }
+
+    .carousel {
+        height: 55vh;
+    }
+
+    .hotro {
+        flex-direction: row;
+    }
+
+    .uudai {
+        width: 60%;
+        padding: 150px 0 0 80px;
+        font-size: 18px;
+    }
+
+    #contactus {
+        height: 30vh;
+    }
+
+    .contact {
+        font-size: 4vh;
+    }
+
+    .sdt {
+        font-size: 28px;
+    }
+
+    .footer {
+        height: 25vh;
+    }
+
+    .noidungbanquyen {
+        width: 70%;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .header {
+        height: 15vh;
+    }
+
+    .header-left {
+        padding: 0px 10px 10px 30px;
+        font-size: 13px;
+    }
+
+    .header-left p {
+        font-size: 150%;
+    }
+
+    .header-middle {
+        width: 55%;
+        font-size: 12px;
+    }
+
+    .carousel {
+        height: 85vh;
+    }
+
+    .hotro {
+        flex-direction: row;
+    }
+
+    .uudai {
+        width: 40%;
+        padding: 80px 0 0 80px;
+    }
+
+    .uudai p {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .support img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: auto;
+    }
+
+    #contactus {
+        height: 60vh;
+    }
+
+    .icon {
+        gap: 10%;
+    }
+
+    .sdt {
+        font-size: 5vh;
+    }
+
+    .footer {
+        height: 45vh;
+    }
+
+    .noidungbanquyen {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) {
+    .header {
+        height: 12vh;
+    }
+
+    .header-left {
+        padding: 0px 0px 10px 40px;
+        font-size: 13px;
+    }
+
+    .header-middle {
+        width: 55%;
+        font-size: 12px;
+    }
+
+    .header-middle p {
+        font-size: 95%;
+    }
+
+    .main {
+        padding-top: 12vh
+    }
+
+    .carousel {
+        height: 65vh;
+    }
+
+    .uudai {
+        width: 60%;
+        padding: 250px 0 0 70px;
+    }
+
+    .uudai p {
+        font-size: 20px;
+    }
+
+    #contactus {
+        height: 40vh;
+    }
+
+    .footer {
+        height: 25vh;
+    }
+}
+
+/* Desktop (≥ 1280px) */
+@media (min-width: 1280px) {
+    .header {
+        height: 15vh;
+    }
+
+    .header-left {
+        padding: 0px 0px 10px 40px;
+        font-size: 13px;
+    }
+
+    .header-middle {
+        width: 55%;
+    }
+
+    .header-middle p {
+        font-size: 95%;
+    }
+
+    .carousel {
+        height: 85vh;
+    }
+
+    .hotro {
+        flex-direction: row;
+    }
+
+    .uudai {
+        width: 40%;
+        padding: 100px 0 0 100px;
+    }
+
+    .support img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: auto;
+    }
+
+    #contactus {
+        height: 60vh;
+    }
+
+    .icon {
+        gap: 10%;
+    }
+
+    .sdt {
+        font-size: 5vh;
+    }
+
+    .footer {
+        height: 45vh;
+    }
+
+    .noidungbanquyen {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .header {
+        height: 15vh;
+    }
+
+    .header-left {
+        padding: 0px 0px 10px 40px;
+        font-size: 13px;
+    }
+
+    .header-middle {
+        width: 55%;
+    }
+
+    .header-middle p {
+        font-size: 100%;
+    }
+
+    .carousel {
+        height: 85vh;
+    }
+
+    .hotro {
+        flex-direction: row;
+    }
+
+    .uudai {
+        width: 40%;
+        padding: 90px 0 0 90px;
+    }
+
+    .uudai p {
+        font-size: 90%;
+        letter-spacing: 3px;
+    }
+
+    .support img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: auto;
+    }
+
+    #contactus {
+        height: 60vh;
+    }
+
+    .icon {
+        gap: 10%;
+    }
+
+    .sdt {
+        font-size: 5vh;
+    }
+
+    .footer {
+        height: 45vh;
+    }
+
+    .noidungbanquyen {
+        width: 40%;
+    }
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Đảm bảo ảnh không bị tràn */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Với flex/grid, cho phép xuống hàng khi chật */
+.header-middle,
+.icon {
+    flex-wrap: wrap;
+}
