@@ -20,8 +20,8 @@ const maytinhdata = [
     {
         id: 3,
         name: "DELL Latitude 7320",
-        price: (8000000).toLocaleString('vi-VN'),
-        saleprice: (9000000).toLocaleString('vi-VN'),
+        price: (8200000).toLocaleString('vi-VN'),
+        saleprice: (9200000).toLocaleString('vi-VN'),
         image: "7320/7320.png",
         brand: "Dell",
     },
